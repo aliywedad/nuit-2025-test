@@ -1,3 +1,10 @@
+export type Question = {
+  id: number;
+  question: string;
+  answers: string[];
+  correct: number; // index dans le tableau answers
+  credit: number;  // nombre de points si bonne réponse
+};
 const data = [
   {"id":1,"question":"What does HTTPS provide?","answers":["Encrypted secure communication","Faster internet speed","Better website design","Free hosting"],"correct":0,"credit":2},
   {"id":2,"question":"Which one is a hashing algorithm?","answers":["AES","RSA","SHA-256","DES"],"correct":2,"credit":3},
