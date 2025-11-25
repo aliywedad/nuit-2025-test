@@ -13,6 +13,9 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Learn 3FA", href: "/3fa" },
+  { name: "Learn cryptography", href: "/cryptography" },
+  { name: "Learn network security", href: "/network-security" },
+  { name: "Learn phishing", href: "/phishing" },
   { name: "Quiz", href: "/quiz" },
 ];
 
@@ -50,7 +53,7 @@ export default function NavBar() {
                 <div className="flex shrink-0 items-center">
                   <Image
                     alt="3FA App logo"
-                    src="/3fa.png"          // image dans /public/3fa.png
+                    src="/image2.png"          // image dans /public/3fa.png
                     width={40}
                     height={40}
                     className="h-10 w-auto px-2"
