@@ -3,10 +3,14 @@
 import { useEffect, useState } from "react";
 import questions, { Question } from "../data";
 import BackButton from "@/components/BackButton";
+import useSound from "use-sound";
 
 const QUESTION_TIME = 30; // secondes
 
 export default function QuizPage() {
+  const [playCorrect] = useSound("/sounds/sound1.mpeg");
+  const [waiting] = useSound("/sounds/sound3.mpeg");
+  const [playWrong] = useSound("/sounds/sound4.mpeg");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [remainingTime, setRemainingTime] = useState(QUESTION_TIME);
   const [score, setScore] = useState(0);
@@ -36,7 +40,10 @@ export default function QuizPage() {
     setSelectedIndex(index);
 
     if (index === currentQuestion.correct) {
+      playCorrect();
       setScore((s) => s + currentQuestion.credit);
+    } else {
+      playWrong();
     }
 
     // Avance à la question suivante après une petite pause
@@ -123,6 +130,7 @@ export default function QuizPage() {
 
           <div className="space-y-3">
             {currentQuestion?.answers.map((answer, index) => {
+              waiting();
               const isSelected = selectedIndex === index;
               const isCorrect = index === currentQuestion.correct;
               const showColors = selectedIndex !== null;
