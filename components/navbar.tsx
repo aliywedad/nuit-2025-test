@@ -51,13 +51,23 @@ export default function NavBar() {
               {/* Logo + liens desktop */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex shrink-0 items-center">
-                  <Image
+
+                        <Link
+                          href={"/snake"}
+                         
+                        >
+                                            <Image
                     alt="3FA App logo"
                     src="/image2.png"          // image dans /public/3fa.png
                     width={40}
                     height={40}
                     className="h-10 w-auto px-2"
                   />
+                         </Link>
+
+
+
+
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4 items-center h-full">
